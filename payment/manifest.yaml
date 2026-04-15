@@ -66,12 +66,12 @@ spec:
               port: 8080
             failureThreshold: 2
             periodSeconds: 10
-            initialDelaySeconds: 20
+            initialDelaySeconds: 40
           startupProbe:
             httpGet:
               path: /health
               port: 8080
-            failureThreshold: 30
+            failureThreshold: 40
             periodSeconds: 10  
             
           envFrom:
