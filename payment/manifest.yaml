@@ -55,7 +55,9 @@ spec:
               path: /health
               port: 8080
             failureThreshold: 30
-            periodSeconds: 5   
+            periodSeconds: 5  
+            initialDelaySeconds: 10
+            timeoutSeconds: 5   
           readinessProbe:
             tcpSocket:
               port: 8080
