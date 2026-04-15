@@ -37,7 +37,7 @@ spec:
       containers:
         - name: catalogue
           image: mayurim334/catalogue:1.4.0
-          imagePullPolicy: Always
+          imagePullPolicy: Always  # safe to pull everytime, there may be images with same version rebuilt and pushed
           resources:
             requests:
               cpu: "100m"
@@ -45,10 +45,7 @@ spec:
             limits:
               cpu: "100m"
               memory: "128Mi"    
-          envFrom:
-          - configMapRef:
-              name: catalogue
-
+          
           readinessProbe:
             tcpSocket:
               port: 8080
@@ -62,8 +59,11 @@ spec:
             httpGet: 
               path: /health
               port: 8080
-            failureThreshold: 2
-            periodSeconds: 10              
+            failureThreshold: 4
+            periodSeconds: 20  
+          envFrom:
+          - configMapRef:
+              name: catalogue             
 ---
 apiVersion: v1
 kind: Service
