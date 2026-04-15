@@ -49,8 +49,8 @@ spec:
             tcpSocket: 
               port: 8080
             failureThreshold: 2
-            periodSeconds: 5
-            initialDelaySeconds: 10
+            periodSeconds: 10
+            initialDelaySeconds: 15
 
           startupProbe:
             httpGet:
