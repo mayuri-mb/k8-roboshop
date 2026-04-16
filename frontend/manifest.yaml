@@ -95,7 +95,7 @@ spec:
         tier: frontend
         component: frontend
     spec:
-      volume:
+      volumes:
         - name: nginx-config
           configMap:
             name: frontend
@@ -126,9 +126,10 @@ spec:
           periodSeconds: 10 
         volumeMounts:
           - name: nginx-config
+            # by default it mounts and thinks as directory
             mountPath: "/etc/nginx/nginx-conf"
-            subpath: nginx.conf
-            readonly: true
+            subPath: nginx.conf
+            readOnly: true
 
 
 ---
