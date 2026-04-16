@@ -8,7 +8,7 @@ metadata:
     tier: frontend
     component: frontend
 data:
-  nginx.config: |
+  nginx.conf: |
     user nginx;
       worker_processes auto;
       error_log /var/log/nginx/error.log notice;
@@ -127,8 +127,8 @@ spec:
         volumeMounts:
           - name: nginx-config
             # by default it mounts and thinks as directory
-            mountPath: "/etc/nginx/nginx-config"
-            subPath: nginx.config
+            mountPath: "/etc/nginx/nginx-conf"
+            subPath: nginx.conf
             readOnly: true
 
 
