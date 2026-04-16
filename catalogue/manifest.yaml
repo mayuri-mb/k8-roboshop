@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
         - name: catalogue
-          image: mayurim334/catalogue:1.4.0
+          image: mayurim334/catalogue:1.5.0
           imagePullPolicy: Always  # safe to pull everytime, there may be images with same version rebuilt and pushed
           resources:
             requests:

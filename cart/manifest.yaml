@@ -38,7 +38,7 @@ spec:
     spec:
       containers:
         - name: cart
-          image: mayurim334/cart:1.4.0
+          image: mayurim334/cart:1.5.0
           imagePullPolicy: Always
           resources:
             requests:

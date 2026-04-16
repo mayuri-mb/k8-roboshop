@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: payment
-          image: mayurim334/payment:1.4.0
+          image: mayurim334/payment:1.5.0
           imagePullPolicy: Always
           resources:
             requests:

@@ -97,7 +97,7 @@ spec:
     spec:
       containers:  
       - name: frontend
-        image: mayurim334/frontend:1.4.0
+        image: mayurim334/frontend:1.5.0
         imagePullPolicy: Always # safe to pull everytime, there may be images with same version rebuilt and pushed
         resources:
           requests:
