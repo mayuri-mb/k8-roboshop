@@ -40,25 +40,25 @@ spec:
           image: mayurim334/user:1.5.0
           imagePullPolicy: Always
           resources:
-          requests:
-            cpu: "100m"
-            memory: "128Mi"
-          limits:
-            cpu: "100m"
-            memory: "128Mi"
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "100m"
+              memory: "128Mi"
 
           readinessProbe:
             tcpSocket:
               port: 8080
-            failureThreshold: 2  
+            failureThreshold: 5  
             periodSeconds: 10  
-            initialDelaySeconds: 15   
+            initialDelaySeconds: 20   
 
           livenessProbe:
             httpGet:
               path: /health
               port: 8080
-            failureThreshold: 2
+            failureThreshold: 5
             periodSeconds: 10
 
           envFrom:
