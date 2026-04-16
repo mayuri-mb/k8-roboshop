@@ -52,14 +52,14 @@ spec:
               # httpGet:
                 # path: /heath
                 #   port: 8080
-            failureThreshold: 2
+            failureThreshold: 5
             periodSeconds: 10
             initialDelaySeconds: 20
           livenessProbe:
             httpGet: 
               path: /health
               port: 8080
-            failureThreshold: 2
+            failureThreshold: 5
             periodSeconds: 10  
           envFrom:
           - configMapRef:
